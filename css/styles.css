@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+:root {
+  --cor-principal: #54c627;
+  --cor-secundaria: #86dc57;
+  --cor-texto: rgba(0, 0, 0, 0.7);
+  --cor-clara: #fff;
+  --cor-texto-secundaria: #fff;
+  --cor-fundo-scroll: #fff;
+  --cor-scroll: #085f07;
+  --gradient-cor-1: hsl(159, 68%, 35%, 0.65);
+  --gradient-cor-2: hsl(142, 89%, 78%, 0.65);
+  --gradient-cor-1-secundaria: #56ab2f;
+  --gradient-cor-2-secundaria: #a8e063;
+  --font-family-principal: "Raleway", sans-serif;
+  --font-family-title: "Dosis", sans-serif;
+  --background-body: #fff;
+  --cor-light-icons: invert(57%) sepia(100%) saturate(336%) hue-rotate(58deg)
+    brightness(91%) contrast(104%);
+  --cor-light-icons-secundaria: invert(100%) sepia(0%) saturate(5924%)
+    hue-rotate(108deg) brightness(103%) contrast(103%);
+  --cor-light-icons-terciaria: invert(15%) sepia(74%) saturate(6878%)
+    hue-rotate(358deg) brightness(102%) contrast(114%);
+  --svg-footer: url(/images/wave.svg);
+}
+
+[data-theme="dark"] {
+  --cor-principal: #091a7a;
+  --cor-secundaria: #1939b7;
+  --cor-texto: rgba(255, 255, 255, 0.8);
+  --cor-clara: #fff;
+  --cor-texto-secundaria: #fff;
+  --cor-fundo-scroll: #10121e;
+  --cor-scroll: #5a5f7b;
+  --gradient-cor-1: hsl(222, 43%, 51%, 0.65);
+  --gradient-cor-2: hsl(220, 50%, 19%, 0.65);
+  --gradient-cor-1-secundaria: #000428;
+  --gradient-cor-2-secundaria: #004e92;
+  --font-family-principal: "Raleway", sans-serif;
+  --font-family-title: "Dosis", sans-serif;
+  --background-body: #171924;
+  --cor-light-icons: invert(11%) sepia(31%) saturate(7104%) hue-rotate(224deg)
+    brightness(97%) contrast(104%);
+  --cor-light-icons-secundaria: invert(100%) sepia(0%) saturate(5924%)
+    hue-rotate(108deg) brightness(103%) contrast(103%);
+  --cor-light-icons-terciaria: invert(15%) sepia(74%) saturate(6878%)
+    hue-rotate(358deg) brightness(102%) contrast(114%);
+  --svg-footer: url(/images/wave2.svg);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--cor-fundo-scroll);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--cor-scroll);
+  border-radius: 5rem;
+}
+
+body {
+  font-family: var(--font-family-principal);
+  background: var(--background-body);
+}
+
+.header {
+  z-index: 1000;
+  position: relative;
+  background: linear-gradient(
+      135deg,
+      var(--gradient-cor-1),
+      var(--gradient-cor-2)
+    ),
+    url(/images/imageHome-media.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 50vw;
+  width: 100%;
+}
+
+.navegation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5px;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.2rem;
+  color: var(--cor-texto-secundaria);
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.7rem;
+}
+
+.logo {
+  font-size: 2rem;
+  padding: 0 0.9rem;
+  color: var(--cor-texto-secundaria);
+}
+
+.toggle-mode {
+  align-self: flex-end;
+}
+
+.label {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+  width: 5rem;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(25px);
+}
+
+.fa-moon {
+  color: var(--cor-principal);
+  font-size: 1.5rem;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 1.5rem;
+}
+
+.ball {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  border-radius: 50%;
+  background: #fff;
+  transition: 0.5s ease-in;
+}
+
+.boxInitial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxInitial__card {
+  position: relative;
+  margin-top: 10rem;
+  width: 30rem;
+  height: 40rem;
+  background: var(--cor-clara);
+  box-shadow: 0.3rem 0.5rem 0.6rem var(--cor-principal);
+}
+
+.boxInitial__card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 25rem;
+  background: var(--cor-principal);
+  border-radius: 0 0 10rem 0;
+}
+
+.image-section {
+  width: 70%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.boxInitial__card-info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card__text {
+  font-family: var(--font-family-principal);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-principal);
+  text-align: center;
+}
+
+.card__text--profi {
+  font-size: 1.8rem;
+}
+
+.card__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  column-gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.card__social-icons {
+  filter: var(--cor-light-icons);
+  height: 2.8rem;
+}
+
+.card__social-icons:hover {
+  transform: scale(1.5);
+  transition: 0.5s ease-in;
+}
